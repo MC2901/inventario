@@ -55,7 +55,7 @@ if(mysqli_connect('localhost','root','','login')){
 	
 }else{
 	
-	print "<h1>No ta funkando</h1>";
+	print "<h1>Algo se rompio</h1>";
 }
 
 

@@ -5,14 +5,14 @@ session_start( );
 <style>
 form{ float: left; width: 45%;}
 </style>
-<h1>MI WEB</h1>
+<h1>Inventario</h1>
 <?php
 
 if( isset($_GET['alta'])){
-	echo 'Salio todo ok, podes loguearte';
+	echo 'Logueado correctamente';
 }
 if( isset($_GET['login'])){
-	echo '<strong style="color: red">Mal tu usuario o tu clave</strong>';
+	echo '<strong style="color: red">Usuario o clave incorrecto</strong>';
 }
 var_dump($_SESSION);
 ?>

@@ -16,7 +16,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 		if ($resultadoProductos = mysqli_query($con, $consultaProductos)) {
 			$consulta = "DELETE FROM categorias WHERE idCategoria='$codigo'";
 			if ($resultado = mysqli_query($con, $consulta)) {
-				print "<h1>La categoria $nombre fue Eliminada :C </h1>";
+				print "<h1>La categoria $nombre fue eliminada</h1>";
 				print "<p><a href='index.php'>Inicio</a></p>";
 			}
 		}

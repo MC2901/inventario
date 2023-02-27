@@ -16,7 +16,7 @@ if(mysqli_connect('localhost','root','','login')){
 		
 		if($resultado = mysqli_query($con, $consulta)){
 			//guardo el resultado de la consulta de base de datos
-				print "<h1>La categoria $nombre fue AGREGADA!!!</h1>";
+				print "<h1>Se agregó la categoria $nombre </h1>";
 				print "<p><a href='index.php'>Inicio</a></p>";
 				
 			
