@@ -10,7 +10,9 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 		$con = mysqli_connect('localhost', 'root', '', 'login');
 		//guardo los datos de conexion
 
+		
 		$consultaProductos = "DELETE FROM productos WHERE categoriaProducto='$codigo'";
+		//Elimina productos
 		if ($resultadoProductos = mysqli_query($con, $consultaProductos)) {
 			$consulta = "DELETE FROM categorias WHERE idCategoria='$codigo'";
 			if ($resultado = mysqli_query($con, $consulta)) {

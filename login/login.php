@@ -27,7 +27,7 @@ if( $a == NULL ){
 	if ($fetchForNivel['NIVEL'] == 'usuario') {
 		header("Location: ./inventario/inventario.php");
 	  } else {
-		header("Location: ./ABM/productos.php");		
+		header("Location: ./inventarioAdmin.php");		
 	  }
 	  
 	

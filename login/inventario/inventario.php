@@ -7,7 +7,8 @@ if(mysqli_connect('localhost','root','','login')){
 	$con = mysqli_connect('localhost','root','','login');
 	//guardo los datos de conexion
 	$consulta = "SELECT idCategoria, categoria FROM categorias";
-		//guardo la consulta que quiero hacerle a la base de datos
+	
+	//guardo la consulta que quiero hacerle a la base de datos
 	if($resultado = mysqli_query($con, $consulta)){
 		//guardo el resultado de la consulta de base de datos
 		print "<ul>";
