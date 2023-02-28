@@ -4,33 +4,29 @@
   padding: 0;
   border: none;
 }
-.login {
+.inventarioAdmin {
+  padding-top: 5rem;
+  background-color: #c3f2c2;
   width: 100%;
   height: 100%;
-  padding-top: 2rem;
-  background-color: #C3F2C2;
-  color: #374036;
-  display: flex;
-  justify-content: space-around;
-}
-
-.form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-.form h2 {
-  font-size: 40px;
+h1 {
+  color: #374036;
+  font-size: 34px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.5em;
   padding-bottom: 10px;
   margin-bottom: 1rem;
   position: relative;
+
 }
-.form h2:before {
+
+h1:before {
   content: "";
   position: absolute;
   left: 0;
@@ -39,7 +35,7 @@
   width: 55px;
   background-color: #374036;
 }
-.form h2:after {
+h1:after {
   content: "";
   position: absolute;
   left: 0;
@@ -47,20 +43,31 @@
   height: 1px;
   width: 95%;
   max-width: 255px;
-  background-color: #9EBF99;
+  background-color: #9ebf99;
 }
 
-.form input {
-  width: 20rem;
-  height: 2.6rem;
-  padding: 8px 12px;
-  margin: 8px;
-  box-sizing: border-box;
-  border: 1px solid #455946;
-  border-radius: 8px;
+ul {
+  padding: 4.5rem;
+  list-style: none;
+}
+ul li {
+  width: 15rem;
+  background: #afd9ad;
+  color: rgb(0, 0, 0);
+  margin: 5px;
+  font-size: 1.5rem;
+}
+ul li a {
+  text-decoration: none;
+  color: #455946;
+}
+.buttons {
+  display: flex;
 }
 
-.submit {
+button {
+  width: 10rem;
+  padding: 1rem;
   background-color: #4caf50; /* Green */
   border: none !important;
   color: white;
@@ -68,33 +75,17 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 10px;
   transition-duration: 0.4s;
   cursor: pointer;
 }
-.submit {
+button {
   background-color: white;
   color: black;
   border: 2px solid #4caf50;
 }
 
-.submit:hover {
+button:hover {
   background-color: #4caf50;
   color: white;
-}
-
-.correct{
-    background-color: #58cf7c;
-    text-align: center;
-    font-size: 1.6rem;
-    padding: 1rem;
-    color: white;
-}
-
-.error{
-    background-color: #fa8080;
-    text-align: center;
-    font-size: 1.6rem;
-    padding: 1rem;
-    color: rgb(255, 255, 255);
 }

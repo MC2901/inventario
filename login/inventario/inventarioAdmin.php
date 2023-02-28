@@ -1,7 +1,10 @@
+<link rel="stylesheet" type="text/css" href="../css/inventarioAdmin.css">
+</link>
 <?php
 
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 if (mysqli_connect('localhost', 'root', '', 'login')) {
+	print "<section class='inventarioAdmin'>";
 	print "<h1>Lista de productos</h1>";
 
 	//guardo los datos de conexion
@@ -20,8 +23,11 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 		}
 
 		print "</ul>";
+		print "<div class='buttons'>";
 		print "<button onclick=\"location.href='../ABM/productos.php'\">ABM Producto</button>";
 		print "<button onclick=\"location.href='../ABM/index.php'\">ABM Categoria</button>";
+		print "</div>";
+		print "</section>";
 	} else {
 		print "<h1>Algo se rompio</h1>";
 	}
