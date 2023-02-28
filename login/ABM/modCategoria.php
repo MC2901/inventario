@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="../css/modCategoria.css">
+</link>
+<section class="modificarCategoria">
 <?php
 
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
@@ -20,7 +23,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 
 			print "<input type='text' name='categoria' value='$rowDB[categoria]'/>";
 
-			print "<input type='submit' value='Modificar'/>";
+			print "<input type='submit' class='submit' value='Modificar'/>";
 
 
 		}
@@ -37,3 +40,4 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 }
 
 ?>
+</section>

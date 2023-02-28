@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="../css/modCategoria2.css">
+</link>
+<section class="modificarCategoria">
 <?php
 
 if (mysqli_connect('localhost', 'root', '', 'login')) {
@@ -27,3 +30,4 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 }
 
 ?>
+</section>

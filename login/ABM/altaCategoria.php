@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="../css/altaCategoria.css">
+</link>
+<section class="altaCategoria">
 <?php
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nameCategory de la base de datos)
 
@@ -26,3 +29,4 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 }
 
 ?>
+</section>
