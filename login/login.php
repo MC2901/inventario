@@ -1,30 +1,29 @@
 <?php
 session_start( );
 
-$connectDataBase= mysqli_connect('localhost','root','','login');
+$connectionDB= mysqli_connect('localhost','root','','login');
 
 $email = $_POST['email'];
-$clave = $_POST['clave'];
-$nivel = $_GET['nivel'];
+$password = $_POST['clave'];
 
 //Conectamos con la bdd y obtenemos todos los datos del alta para compararlos con los ingresados 
-$c = "SELECT NOMBRE, APELLIDO, EMAIL, ID, NIVEL FROM usuarios WHERE EMAIL='$email' AND CLAVE=MD5('$clave') LIMIT 1";
-$f = mysqli_query($connectDataBase, $c);
-$a = mysqli_fetch_assoc($f);
+$queryDB = "SELECT NOMBRE, APELLIDO, EMAIL, ID, NIVEL FROM usuarios WHERE EMAIL='$email' AND CLAVE=MD5('$password') LIMIT 1";
+$result = mysqli_query($connectionDB, $queryDB);
+$fetchAssocDB= mysqli_fetch_assoc($result);
 
 //Conectamos con bdd y solicitamos el nivel
-$getNivel = "SELECT NIVEL FROM usuarios WHERE EMAIL ='$email' AND CLAVE=MD5('$clave') LIMIT 1";
-$connectForNivel = mysqli_query($connectDataBase, $getNivel);
-$fetchForNivel = mysqli_fetch_assoc($connectForNivel);
+$queryDBLevel = "SELECT NIVEL FROM usuarios WHERE EMAIL ='$email' AND CLAVE=MD5('$password') LIMIT 1";
+$connectForLevel = mysqli_query($connectionDB, $queryDBLevel);
+$fetchForLevel = mysqli_fetch_assoc($connectForLevel);
 
-if( $a == NULL ){
+if( $fetchAssocDB == NULL ){
 	header("Location: index.php?login=error");
 }else{
 	
-	$_SESSION = $a;
+	$_SESSION = $fetchAssocDB;
 	
 	//Validacion de user/admin
-	if ($fetchForNivel['NIVEL'] == 'usuario') {
+	if ($fetchForLevel['NIVEL'] == 'usuario') {
 		header("Location: ./inventario/inventario.php");
 	  } else {
 		header("Location: ./inventario/inventarioAdmin.php");		

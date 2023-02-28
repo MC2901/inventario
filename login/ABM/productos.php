@@ -1,31 +1,30 @@
 <?php
 
+//Inicializacion de variables
 if (mysqli_connect('localhost', 'root', '', 'login')) {
-	//Inicializacion de variables
-	$codigo = '';
-	$nombre = '';
+	$categoryCode = '';
+	$categoryName = '';
 	if (isset($_GET['categoria']) and isset($_GET['nombre'])) {
-		$codigo = $_GET['categoria'];
-		$nombre = $_GET['nombre'];
+		$categoryCode = $_GET['categoria'];
+		$categoryName = $_GET['nombre'];
 	}
 
 	//conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 	if (isset($_GET['categoria']) and isset($_GET['nombre'])) {
-		$codigo = $_GET['categoria'];
-		$nombre = $_GET['nombre'];
+		$categoryCode = $_GET['categoria'];
+		$categoryName = $_GET['nombre'];
 	}
 
-	$con = mysqli_connect('localhost', 'root', '', 'login');
 	//guardo los datos de conexion
+	$connectionDB = mysqli_connect('localhost', 'root', '', 'login');
 
-	$consulta = "SELECT codigoProducto, nombreProducto FROM productos WHERE categoriaProducto='$codigo'";
-
+	$queryDB = "SELECT codigoProducto, nombreProducto FROM productos WHERE categoriaProducto='$categoryCode'";
 
 	//guardo la consulta que quiero hacerle a la base de datos
-	if ($resultado = mysqli_query($con, $consulta)) {
-		//guardo el resultado de la consulta de base de datos
+	//guardo el resultado de la consulta de base de datos
+	if ($result = mysqli_query($connectionDB, $queryDB)) {
 		print "<table border='1'>";
-		print "<caption>$nombre</caption>";
+		print "<caption>$categoryName</caption>";
 		print "
 				<tr>
 					<th>Productos</th>
@@ -33,18 +32,16 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 					<th>Borrar</th>
 				</tr>
 		";
-		while ($fila = mysqli_fetch_array($resultado)) {
-			//divide el resultado
+		//divide el resultado
+		while ($rowDB = mysqli_fetch_array($result)) {
 			print "<tr>";
-			print "<td> $fila[nombreProducto]</td>";
-			print "<td><a href='modProducto.php?producto=$fila[codigoProducto]'> Mod</a></td>";
-			print "<td><a href='borProducto.php?producto=$fila[codigoProducto]&&nombre=$fila[nombreProducto]'> Bor </a></td>";
+			print "<td> $rowDB[nombreProducto]</td>";
+			print "<td><a href='modProducto.php?producto=$rowDB[codigoProducto]'> Mod</a></td>";
+			print "<td><a href='borProducto.php?producto=$rowDB[codigoProducto]&&nombre=$rowDB[nombreProducto]'> Bor </a></td>";
 
 			print "</tr>";
 
-
 		}
-
 
 		print "</table>";
 
@@ -52,14 +49,10 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 		print "<h1>Algo se rompio</h1>";
 	}
 
-
 } else {
 
 	print "<h1>Algo se rompio</h1>";
 }
-
-
-
 
 ?>
 
@@ -98,16 +91,11 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 		<textarea name="detalle">Detalle</textarea>
 	</p>
 
-
+	<!-- input con la categoriaProducto -->
 	<p>
-		<!-- input con la categoriaProducto -->
-		<input id="categoria" name="categoria" <?php print "value=$codigo"; ?> />
+		<input id="categoria" name="categoria" <?php print "value=$categoryCode"; ?> />
 	</p>
 
-
-
-
 	<input type="submit" value="Crear Producto">
-
 
 </form>

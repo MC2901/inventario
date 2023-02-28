@@ -1,12 +1,12 @@
 <?php
 $id = $_GET['id'];
 
-$connectDataBase= mysqli_connect('localhost','root','','login');
+$connectDB= mysqli_connect('localhost','root','','login');
 
 
-$c = "UPDATE usuarios SET ESTADO='banneado' WHERE ID='$id'";
+$queryDB = "UPDATE usuarios SET ESTADO='banneado' WHERE ID='$id'";
 
-mysqli_query($connectDataBase, $c);
+mysqli_query($connectDB, $queryDB);
 header("Location: index.php");
 
 ?>

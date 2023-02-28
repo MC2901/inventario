@@ -1,46 +1,29 @@
 <?php
 
-if(mysqli_connect('localhost','root','','login')){
+if (mysqli_connect('localhost', 'root', '', 'login')) {
 	//conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 
-	
-	
-	if(isset($_POST['categoria'])and isset($_POST['id'])){
-		$nombre = $_POST['categoria'];
-		$codigo = $_POST['id'];
-	
-		$con = mysqli_connect('localhost','root','','login');
+	if (isset($_POST['categoria']) and isset($_POST['id'])) {
+		$categoryName = $_POST['categoria'];
+		$categoryCode = $_POST['id'];
+
+		$connectionDB = mysqli_connect('localhost', 'root', '', 'login');
 		//guardo los datos de conexion
-		
-		$consulta = "UPDATE categorias SET categoria='$nombre' WHERE idCategoria='$codigo'";
+
+		$queryDB = "UPDATE categorias SET categoria='$categoryName' WHERE idCategoria='$categoryCode'";
 		//guardo la consulta que quiero hacerle a la base de datos
-		
-		if($resultado = mysqli_query($con, $consulta)){
+
+		if ($resultado = mysqli_query($connectionDB, $queryDB)) {
 			//guardo el resultado de la consulta de base de datos
-				print "<h1>La categoria $nombre fue modificada</h1>";
-				print "<p><a href='index.php'>Inicio</a></p>";
-				
-			
+			print "<h1>La categoria $categoryName fue modificada</h1>";
+			print "<p><a href='index.php'>Inicio</a></p>";
+
 		}
-		
-		
-			
-		
-	}else{
+
+	} else {
 		print "<h1>Algo se rompio</h1>";
 	}
-		
-		
-		
-		
-		
-	
-	
-	
-	
+
 }
-
-
-
 
 ?>

@@ -1,27 +1,25 @@
 <?php
 
-$connectDataBase= mysqli_connect('localhost','root','','login');
+$connnectDB = mysqli_connect('localhost', 'root', '', 'login');
 
-$e = $_POST['email'];
-$c = $_POST['clave'];
-$nombre=$_POST['nombre'];
-$apellido=$_POST['apellido'];
+$email = $_POST['email'];
+$password = $_POST['clave'];
+$name = $_POST['nombre'];
+$surname = $_POST['apellido'];
 
-$q =<<<ALGO
+$queryDB = <<<ALGO
 	INSERT INTO 
 		usuarios 
 	SET 
-		NOMBRE='$nombre',
-		APELLIDO='$apellido',
-		EMAIL='$e', 
-		CLAVE=MD5('$c'),
+		NOMBRE='$name',
+		APELLIDO='$surname',
+		EMAIL='$email', 
+		CLAVE=MD5('$password'),
 		NIVEL='usuario',
 		FECHA_ALTA=NOW( )
 ALGO;
 
-mysqli_query($connectDataBase, $q);
+mysqli_query($connnectDB, $queryDB);
 header("Location: index.php?alta=ok");
-
-
 
 ?>
