@@ -7,7 +7,6 @@ if( !isset( $_SESSION['ID'] ) ){
 
 
 
-var_dump($_SESSION);
 /*print "<ul>"
 print "<li>". $nombre .  "</li>";
 print "</ul>"*/
