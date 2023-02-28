@@ -46,10 +46,10 @@ h1:after {
   background-color: #9ebf99;
 }
 
-.productos{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
+.productos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .producto {
@@ -63,11 +63,10 @@ h1:after {
   text-decoration: none;
   color: #455946;
 }
-h2{
-   margin-bottom: 2rem; 
+h2 {
+  margin-bottom: 2rem;
 }
-h2 a{
-    text-decoration: none;
-    color: #374036;
+h2 a {
+  text-decoration: none;
+  color: #374036;
 }
-

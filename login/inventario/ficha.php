@@ -1,8 +1,11 @@
+<link rel="stylesheet" type="text/css" href="../css/ficha.css">
+</link>
 <?php
 
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 if (mysqli_connect('localhost', 'root', '', 'login')) {
-	print "<h1>Ficha</h1>";
+	print "<section class='ficha'>";
+	print "<h1>Detalles</h1>";
 
 
 	if (isset($_GET['categoria'])) {
@@ -27,7 +30,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 				print "</div>";
 
 			}
-
+			print "</section>";
 		} else {
 			print "<h1>Algo se rompio</h1>";
 		}
