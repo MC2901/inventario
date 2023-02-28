@@ -41,8 +41,8 @@ h1:after {
   left: 0;
   bottom: 2px;
   height: 1px;
-  width: 95%;
-  max-width: 255px;
+  width: 100%;
+  max-width: 350px;
   background-color: #9ebf99;
 }
 

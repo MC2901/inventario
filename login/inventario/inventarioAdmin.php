@@ -5,7 +5,7 @@
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 if (mysqli_connect('localhost', 'root', '', 'login')) {
 	print "<section class='inventarioAdmin'>";
-	print "<h1>Lista de productos</h1>";
+	print "<h1>Categoría de productos</h1>";
 
 	//guardo los datos de conexion
 	$connectionDB = mysqli_connect('localhost', 'root', '', 'login');
