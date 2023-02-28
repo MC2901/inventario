@@ -22,7 +22,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 				print "<h1>$rowDB[categoria]</h1>";
 			}
 		}
-		
+
 		print "<div class='productos'>";
 		//guardo el resultado de la consulta de base de datos
 		if ($result = mysqli_query($connectionDB, $queryDBProduct)) {
@@ -36,7 +36,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 				print "<p>Descripcion: $rowDB[descripcionProducto]</p>";
 				print "</div>";
 			}
-			
+
 			print "</div>";
 		} else {
 			print "<h1>Algo se rompio</h1>";
