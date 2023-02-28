@@ -41,7 +41,7 @@ textarea {
 .inventario {
   display: flex;
   align-items: center;
-margin: 1.5rem 1rem 0 1rem;
+  margin: 1.5rem 1rem 0 1rem;
 }
 th a {
   text-decoration: none;
@@ -81,11 +81,11 @@ tr td {
 }
 
 tr td a {
-    text-decoration: none;
-    color: #455946;
+  text-decoration: none;
+  color: #455946;
 }
 
-.botones-flex{
+.botones-flex {
   padding: 3.5rem;
 }
 
@@ -95,4 +95,3 @@ tr td a {
   font-weight: 500;
   padding: 1rem;
 }
-
