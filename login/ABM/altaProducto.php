@@ -1,3 +1,6 @@
+<link rel="stylesheet" type="text/css" href="../css/altaProducto.css">
+</link>
+<section class="altaProducto">
 <?php
 
 //conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
@@ -37,3 +40,4 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 }
 
 ?>
+</section>
