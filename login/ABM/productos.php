@@ -37,8 +37,8 @@
 			while ($rowDB = mysqli_fetch_array($result)) {
 				print "<tr class='inventario'>";
 				print "<td> $rowDB[nombreProducto]</td>";
-				print "<td><a href='modProducto.php?producto=$rowDB[codigoProducto]'> Mod</a></td>";
-				print "<td><a href='borProducto.php?producto=$rowDB[codigoProducto]&&nombre=$rowDB[nombreProducto]'> Bor </a></td>";
+				print "<td><a href='modProducto.php?producto=$rowDB[codigoProducto]'> Modificar</a></td>";
+				print "<td><a href='borProducto.php?producto=$rowDB[codigoProducto]&&nombre=$rowDB[nombreProducto]'> Borrar </a></td>";
 
 				print "</tr>";
 

@@ -75,7 +75,7 @@ tr th:hover {
 }
 
 tr td {
-  width: 25%;
+  width: 10rem;
   background: #afd9ad;
   color: rgb(0, 0, 0);
   margin: 0.4rem;
@@ -85,6 +85,7 @@ tr td {
 tr td a {
   text-decoration: none;
   color: #455946;
+
 }
 
 .botones-flex {
