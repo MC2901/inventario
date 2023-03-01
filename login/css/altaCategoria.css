@@ -10,7 +10,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
 }
 p {
@@ -38,3 +38,5 @@ p a {
   color: #455946;
   text-decoration: none;
 }
+
+

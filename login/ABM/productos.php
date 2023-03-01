@@ -94,11 +94,25 @@
 			<textarea name="detalle"></textarea>
 		</p>
 
-		<!-- input con la categoriaProducto -->
-		<p class="input">
-			<label for="categoria">Categoria</label>
-			<input id="categoria" name="categoria"/>
-		</p>
+		<p class="input desplegable">
+    <label class="nombreCategoria" for="categoria">Nombre de categoria</label>
+    <select id="categoria" name="categoria">
+        <?php
+        // Consulta a la base de datos para obtener las categorías existentes
+        $queryCategorias = "SELECT idCategoria, categoria FROM categorias";
+        $resultCategorias = mysqli_query($connectionDB, $queryCategorias);
+
+        // Imprime cada categoría en el select como una opción
+        while ($rowCategoria = mysqli_fetch_array($resultCategorias)) {
+            // Verifica si la categoría actual es la que se seleccionó previamente
+            $selected = ($rowCategoria['idCategoria'] == $categoryCode) ? 'selected' : '';
+            // Imprime la opción
+            echo "<option value='{$rowCategoria['categoria']}' $selected>{$rowCategoria['categoria']}</option>";
+        }
+        ?>
+    </select>
+</p>
+
 
 		<input type="submit" value="Crear Producto">
 

@@ -1,3 +1,7 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <link rel="stylesheet" type="text/css" href="../css/ABMCategorias.css">
 </link>
 <section class="ABMCategoria">
@@ -21,8 +25,8 @@
 			while ($rowDB = mysqli_fetch_array($result)) {
 				print "<tr>";
 				print "<td><a href='productos.php?categoria=$rowDB[idCategoria]&&nombre=$rowDB[categoria]'> $rowDB[categoria] </a></td>";
-				print "<td><a href='modCategoria.php?categoria=$rowDB[idCategoria]'> Mod</a></td>";
-				print "<td><a href='borCategoria.php?categoria=$rowDB[idCategoria]&&nombre=$rowDB[categoria]'> Bor </a></td>";
+				print "<td><a href='modCategoria.php?categoria=$rowDB[idCategoria]'> Modificar</a></td>";
+				print "<td><a href='borCategoria.php?categoria=$rowDB[idCategoria]&&nombre=$rowDB[categoria]'> Borrar </a></td>";
 
 				print "</tr>";
 			}
