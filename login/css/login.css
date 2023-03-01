@@ -1,14 +1,75 @@
 * {
-  font-family: "Montserrat";
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  border: none;
 }
+
+/* Estilos para dispositivos con pantalla pequeña */
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+    margin: auto;
+  }
+
+  .form h2 {
+    font-size: 30px;
+    margin-bottom: 0.5rem;
+  }
+
+  .form h2:before {
+    width: 40px;
+  }
+
+  .form h2:after {
+    width: 85%;
+    max-width: unset;
+  }
+
+  .form input {
+    width: 100%;
+  }
+
+  .submit {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Estilos para dispositivos con pantalla mediana o grande */
+@media (min-width: 601px) {
+  .form {
+    width: 60%;
+    margin: auto;
+  }
+
+  .form h2 {
+    font-size: 40px;
+  }
+
+  .form h2:before {
+    width: 55px;
+  }
+
+  .form h2:after {
+    width: 95%;
+    max-width: 255px;
+  }
+
+  .form input {
+    width: 20rem;
+  }
+
+  .submit {
+    width: 10rem;
+    margin-top: 1rem;
+  }
+}
+
 .login {
   width: 100%;
   height: 100%;
   padding-top: 2rem;
-  background-color: #C3F2C2;
+  background-color: #c3f2c2;
   color: #374036;
   display: flex;
   justify-content: space-around;
@@ -22,7 +83,6 @@
 }
 
 .form h2 {
-  font-size: 40px;
   font-weight: 500;
   letter-spacing: 0;
   line-height: 1.5em;
@@ -30,6 +90,7 @@
   margin-bottom: 1rem;
   position: relative;
 }
+
 .form h2:before {
   content: "";
   position: absolute;
@@ -39,6 +100,7 @@
   width: 55px;
   background-color: #374036;
 }
+
 .form h2:after {
   content: "";
   position: absolute;
@@ -47,21 +109,19 @@
   height: 1px;
   width: 95%;
   max-width: 255px;
-  background-color: #9EBF99;
+  background-color: #9ebf99;
 }
 
 .form input {
-  width: 20rem;
   height: 2.6rem;
   padding: 8px 12px;
   margin: 8px;
-  box-sizing: border-box;
   border: 1px solid #455946;
   border-radius: 8px;
 }
 
 .submit {
-  background-color: #4caf50; /* Green */
+  background-color: #4caf50;
   border: none !important;
   color: white;
   text-align: center;
@@ -72,6 +132,7 @@
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
 .submit {
   background-color: white;
   color: black;
@@ -83,12 +144,12 @@
   color: white;
 }
 
-.correct{
-    background-color: #58cf7c;
-    text-align: center;
-    font-size: 1.6rem;
-    padding: 1rem;
-    color: white;
+.correct {
+  background-color: #58cf7c;
+  text-align: center;
+  font-size: 1.6rem;
+  padding: 1rem;
+  color: white;
 }
 
 .error{

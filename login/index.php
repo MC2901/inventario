@@ -7,7 +7,7 @@ session_start();
 <?php
 
 if (isset($_GET['alta'])) {
-	echo '<p class="correct">Logueado correctamente</p>';
+	echo '<p class="correct">Registrado correctamente</p>';
 }
 if (isset($_GET['login'])) {
 	echo '<p class="error">Usuario o clave incorrecto</p>';

@@ -35,8 +35,4 @@ CREATE TABLE `usuarios` (
 -- ----------------------------
 -- Records of usuarios
 -- ----------------------------
-INSERT INTO `usuarios` VALUES ('1', 'Bautista', 'Carloni', 'gr@dv.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin', '2014-11-06 21:35:46', 'activo');
-INSERT INTO `usuarios` VALUES ('2', null, null, 'facu@dv.net', '81dc9bdb52d04dc20036dbd8313ed055', 'usuario', null, 'activo');
-INSERT INTO `usuarios` VALUES ('3', null, null, 'facu2@dv.net', '81dc9bdb52d04dc20036dbd8313ed055', 'usuario', '2014-11-06 21:41:12', 'activo');
-INSERT INTO `usuarios` VALUES ('4', null, null, 'asdadasd@asdasd', '81dc9bdb52d04dc20036dbd8313ed055', 'usuario', '2014-11-06 21:50:21', 'banneado');
-INSERT INTO `usuarios` VALUES ('6', null, null, 'a@email.com', '81dc9bdb52d04dc20036dbd8313ed055', 'usuario', '2014-11-06 22:03:47', 'activo');
+INSERT INTO `usuarios` VALUES ('1', 'Matias', 'Cerini', 'matias.cerini@davinci.com', '81dc9bdb52d04dc20036dbd8313ed055', 'Admin', '2014-11-06 21:35:46', 'activo');
