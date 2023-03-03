@@ -27,10 +27,10 @@
 				print "<p>Cantidad</p><input type='text' name='cantidad' value='$rowDB[cantidadProducto]'/>";
 				print "<p>Descripción</p>
 					<textarea name ='desc'>$rowDB[descripcionProducto]</textarea>";
-				print "<p class='input'>
+				print "<div class='foto'>
 						<label for='foto'>Agregue una Imagen</label>
 						<input type='file' id='foto' name='foto'>
-					</p>";
+					</div>";
 				print "<p>Detalles</p>
 					<textarea name ='detalle'>$rowDB[detallesProducto]</textarea>";
 				print "<p><input type='submit' class='submit' value='Modificar'/></p>";

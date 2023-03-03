@@ -37,11 +37,11 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`idCategoria`, `categoria`) VALUES
-(1, 'televisores'),
-(2, 'heladeras'),
-(3, 'muebles'),
-(4, 'lavarropas'),
-(5, 'computadoras');
+(1, 'Picadores'),
+(2, 'Bandejas'),
+(3, 'Carpas'),
+(4, 'Insecticidas/Fungicidas'),
+(5, 'Bongs');
 
 -- --------------------------------------------------------
 
@@ -66,9 +66,9 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`codigoProducto`, `nombreProducto`, `precioProducto`, `cantidadProducto`, `fotoProducto`, `fotoMarca`, `descripcionProducto`, `detallesProducto`, `categoriaProducto`) VALUES
-(1, 'TV LG 42 pulgadas', 10000.00, 5, NULL, NULL, 'La mejor tele para ver el mundial', 'Se ve genial', 1),
-(2, 'TV Philco 32 pulgadas', 5000.00, 3, NULL, NULL, 'Una tele para ver en el dormitorio', 'Se ve muy bien', 1),
-(3, 'Heladera Patrick tropical', 6000.00, 2, NULL, NULL, 'Enfria re bien', 'Color blanco', 2);
+(1, 'Picador Lion Rolling Circus', 10000.00, 5, NULL, NULL, 'Picador Lion 3 pisos', 'Picador', 1),
+(2, 'Bandeja Lion Rolling Circus', 5000.00, 3, NULL, NULL, 'Bandeja dorada Lion Rolling', 'Tamaño pequeño', 2),
+(3, 'Carpa cultivarg 1mt', 6000.00, 2, NULL, NULL, 'Carpa indoor', 'Indoor', 3);
 
 --
 -- Índices para tablas volcadas
