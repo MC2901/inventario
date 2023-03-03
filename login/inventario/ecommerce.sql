@@ -54,7 +54,7 @@ CREATE TABLE `productos` (
   `nombreProducto` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
   `precioProducto` float(9,2) UNSIGNED DEFAULT NULL,
   `cantidadProducto` smallint(5) DEFAULT NULL,
-  `fotoProducto` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `fotoProducto` varchar(100) COLLATE utf8_spanish_ci DEFAULT "default.jpg",
   `fotoMarca` varchar(100) COLLATE utf8_spanish_ci DEFAULT NULL,
   `descripcionProducto` text COLLATE utf8_spanish_ci DEFAULT NULL,
   `detallesProducto` text COLLATE utf8_spanish_ci DEFAULT NULL,

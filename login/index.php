@@ -12,7 +12,25 @@ if (isset($_GET['alta'])) {
 if (isset($_GET['login'])) {
 	echo '<p class="error">Usuario o clave incorrecto</p>';
 }
+if (isset($_GET['error'])) {
+	if ($_GET['error'] == 'duplicate_email') {
+		echo '<p class="error">Ya existe un usuario registrado con este correo electrónico.</p>';
+	} else {
+		echo '<p class="error">Debes llenar todos los casilleros correctamente.</p>';
+	}
+}
+
+// función JS para que los carteles desaparezcan a los 5 segundos
+echo "<script>
+  setTimeout(function() {
+    var messages = document.querySelectorAll('.correct, .error');
+    messages.forEach(function(message) {
+      message.classList.add('hidden');
+    });
+  }, 5000);
+</script>";
 ?>
+
 <section class="login">
 	<form class="form" method="post" action="login.php">
 		<h2>LOGIN</h2>

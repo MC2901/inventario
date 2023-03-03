@@ -32,6 +32,4 @@ if( $fetchAssocDB == NULL ){
 	
 }
 
-
-
 ?>

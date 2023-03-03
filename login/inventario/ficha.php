@@ -14,7 +14,7 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
         //guardo los datos de conexion
         $connectionDB = mysqli_connect('localhost', 'root', '', 'login');
         //guardo la consulta que quiero hacerle a la base de datos
-        $queryDB = "SELECT codigoProducto, nombreProducto, precioProducto, descripcionProducto, categoriaProducto, cantidadProducto, fotoProducto,detallesProducto FROM productos WHERE codigoProducto=$categoryCode";
+        $queryDB = "SELECT codigoProducto, nombreProducto, precioProducto, descripcionProducto, categoriaProducto, cantidadProducto, fotoProducto, detallesProducto FROM productos WHERE codigoProducto=$categoryCode";
 
         //guardo el resultado de la consulta de base de datos
         if ($result = mysqli_query($connectionDB, $queryDB)) {

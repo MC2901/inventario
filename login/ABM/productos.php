@@ -29,7 +29,7 @@
 			print "<table border='1'>";
 			print "<caption class='nombreCategoria'>$categoryName</caption>";
 			print "
-				<tr>
+				<tr class='titCategoria'>
 					<th><a href='../inventario/inventarioAdmin.php'>Productos</a></th>
 				</tr>
 		";
@@ -95,7 +95,7 @@
 		</p>
 
 		<p class="input desplegable">
-    <label class="nombreCategoria" for="categoria">Nombre de categoria</label>
+    <label class="nombreCategorias" for="categoria">Nombre de categoria</label>
     <select id="categoria" name="categoria">
         <?php
         // Consulta a la base de datos para obtener las categorías existentes
@@ -114,7 +114,7 @@
 </p>
 
 
-		<input type="submit" value="Crear Producto">
+		<input class="submit" type="submit" value="Crear Producto">
 
 	</form>
 </section>
