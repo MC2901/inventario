@@ -20,15 +20,16 @@ if (isset($_GET['error'])) {
 	}
 }
 
-// función JS para que los carteles desaparezcan a los 5 segundos
+// función JS para que los carteles desaparezcan a los 3 segundos
 echo "<script>
   setTimeout(function() {
     var messages = document.querySelectorAll('.correct, .error');
     messages.forEach(function(message) {
       message.classList.add('hidden');
     });
-  }, 5000);
+  }, 3000);
 </script>";
+
 ?>
 
 <section class="login">
