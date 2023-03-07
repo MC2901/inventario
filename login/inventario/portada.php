@@ -2,32 +2,34 @@
 </link>
 <?php
 
-//conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
+// Conexión a la base de datos con 4 parámetros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 if (mysqli_connect('localhost', 'root', '', 'login')) {
-	//guardo los datos de conexion
+
+	// Verifica si la variable GET "categoria" está definida y la guarda en la variable $categoryCode
 	if (isset($_GET['categoria'])) {
 		$categoryCode = $_GET['categoria'];
 		$connectionDB = mysqli_connect('localhost', 'root', '', 'login');
-		//Con esta consulta traigo la categoria actual comparando el id de la categoria con la variable codigo para filtrar
+		// Consulta para traer la categoría actual comparando el id de la categoría con la variable código para filtrar
 		$queryDBProduct = "SELECT codigoProducto, nombreProducto, precioProducto, descripcionProducto, categoriaProducto FROM productos WHERE categoriaProducto=$categoryCode";
 		$queryDBCategory = "SELECT categoria, idCategoria FROM categorias WHERE idCategoria=$categoryCode";
 
-
+		// Imprime la sección de portada
 		print "<section class='portada'>";
 
-		//guardo la consulta que quiero hacerle a la base de datos
-		//traer el nombre de la categoria
+		// Consulta para traer el nombre de la categoría
 		if ($result = mysqli_query($connectionDB, $queryDBCategory)) {
 			while ($rowDB = mysqli_fetch_array($result)) {
 				print "<h1>$rowDB[categoria]</h1>";
 			}
 		}
 
+		// Imprime la sección de productos
 		print "<div class='productos'>";
-		//guardo el resultado de la consulta de base de datos
+
+		// Consulta para traer el resultado de la base de datos y filtrar por categoría
 		if ($result = mysqli_query($connectionDB, $queryDBProduct)) {
 
-			//divide el resultado
+			// Divide el resultado y muestra la información de cada producto
 			while ($rowDB = mysqli_fetch_array($result)) {
 
 				print "<div class='producto'>";
@@ -39,14 +41,18 @@ if (mysqli_connect('localhost', 'root', '', 'login')) {
 
 			print "</div>";
 		} else {
-			print "<h1>Algo se rompio</h1>";
+			print "<h1>Algo se rompió</h1>";
 		}
 
 	}
+
+	// Cierra la sección de portada
 	print "</section>";
 
 } else {
 
-	print "<h1>Algo se rompio</h1>";
+	// Imprime un mensaje de error si la conexión a la base de datos falló
+	print "<h1>Algo se rompió</h1>";
 }
+
 ?>

@@ -3,7 +3,7 @@
 <section class="modificarProducto">
 	<?php
 
-	//conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
+	// Se verifica la conexión a la base de datos con 4 parámetros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
 	if (mysqli_connect('localhost', 'root', '', 'login')) {
 
 		$productCode = '';
@@ -12,14 +12,15 @@
 			$productCode = $_GET['producto'];
 		}
 
-		//guardo los datos de conexion
+		// Se guarda los datos de conexión
 		$connectionDB = mysqli_connect('localhost', 'root', '', 'login');
-		//guardo la consulta que quiero hacerle a la base de datos
+		// Se guarda la consulta que se quiere hacerle a la base de datos
 		$queryDB = "SELECT * FROM productos WHERE codigoProducto='$productCode'";
-		//guardo el resultado de la consulta de base de datos
+		// Se guarda el resultado de la consulta de base de datos
 		if ($result = mysqli_query($connectionDB, $queryDB)) {
+			// Se muestra un formulario con los datos del producto a modificar
 			print "<form action='modProducto2.php' method='post' enctype='multipart/form-data'>";
-			//divide el resultado
+			// Se divide el resultado obtenido en filas y se muestran los datos del producto en el formulario
 			while ($rowDB = mysqli_fetch_array($result)) {
 				print "<p><input type='hidden' name='codigo' value=$rowDB[codigoProducto] /></p>";
 				print "<p>Nombre</p><input type='text' name='nombre' value='$rowDB[nombreProducto]'/>";
@@ -40,12 +41,13 @@
 			print "</form>";
 
 		} else {
-			print "<h1>Algo se rompio</h1>";
+			// Se muestra un mensaje de error si la consulta no se realizó correctamente
+			print "<h1>Algo se rompió</h1>";
 		}
 
 	} else {
-
-		print "<h1>Algo se rompio</h1>";
+		// Se muestra un mensaje de error si no se pudo establecer conexión con la base de datos
+		print "<h1>Algo se rompió</h1>";
 	}
 
 	?>

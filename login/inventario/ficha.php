@@ -1,44 +1,44 @@
-<link rel="stylesheet" type="text/css" href="../css/ficha.css">
-</link>
+<!-- Carga de hoja de estilos CSS -->
+<link rel="stylesheet" type="text/css" href="../css/ficha.css"></link>
 <?php
-
-//conexion a la base de datos con 4 parametros (servidor, usuarioServidor, contraseña usuario y nombre de la base de datos)
+// Conexión a la base de datos con 4 parámetros: servidor, usuarioServidor, contraseña usuario y nombre de la base de datos
 if (mysqli_connect('localhost', 'root', '', 'login')) {
+    // Impresión de la sección de detalles
     print "<section class='ficha'>";
     print "<h1>Detalles</h1>";
 
-
+    // Verificación de existencia del parámetro "categoria"
     if (isset($_GET['categoria'])) {
         $categoryCode = $_GET['categoria'];
 
-        //guardo los datos de conexion
+        // Guardado de los datos de conexión a la base de datos
         $connectionDB = mysqli_connect('localhost', 'root', '', 'login');
-        //guardo la consulta que quiero hacerle a la base de datos
+        // Definición de la consulta que se le hará a la base de datos
         $queryDB = "SELECT codigoProducto, nombreProducto, precioProducto, descripcionProducto, categoriaProducto, cantidadProducto, fotoProducto, detallesProducto FROM productos WHERE codigoProducto=$categoryCode";
 
-        //guardo el resultado de la consulta de base de datos
+        // Ejecución de la consulta y guardado del resultado
         if ($result = mysqli_query($connectionDB, $queryDB)) {
-            //divide el resultado
+            // Iteración sobre los resultados obtenidos de la consulta
             while ($rowDB = mysqli_fetch_array($result)) {
+                // Impresión de los detalles del producto
                 print "<div>";
                 print "<h2>$rowDB[nombreProducto]</h2>";
                 print "<p>Precio: $rowDB[precioProducto]</p>";
-                print "<p>Descripcion: $rowDB[descripcionProducto]</p>";
+                print "<p>Descripción: $rowDB[descripcionProducto]</p>";
                 print "<p>Stock: $rowDB[cantidadProducto]</p>";
-                print "<p>Detalle: $rowDB[detallesProducto]</p>";
+                print "<p>Detalles: $rowDB[detallesProducto]</p>";
                 print "<img src='../fotos/$rowDB[fotoProducto]' style='max-width: 27rem; height: auto;'>";
                 print "</div>";
-
             }
+            // Cierre de la sección de detalles
             print "</section>";
         } else {
-            print "<h1>Algo se rompio</h1>";
+            // Impresión de mensaje de error si la consulta no se pudo ejecutar
+            print "<h1>Algo salió mal</h1>";
         }
-
     }
-
 } else {
-    print "<h1>Algo se rompio</h1>";
+    // Impresión de mensaje de error si no se pudo establecer la conexión a la base de datos
+    print "<h1>Algo salió mal</h1>";
 }
-
 ?>

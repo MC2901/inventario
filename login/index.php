@@ -1,34 +1,25 @@
 <?php
-session_start();
+session_start(); // Iniciar la sesión
 ?>
 
-<link rel="stylesheet" type="text/css" href="./css/login.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css"> <!-- Enlazar la hoja de estilos -->
 </link>
-<?php
 
+<?php
+// Mostrar mensajes según el resultado de la acción del usuario
 if (isset($_GET['alta'])) {
-	echo '<p class="correct">Registrado correctamente</p>';
+	echo '<p class="correct">Registrado correctamente</p>'; // Mensaje de éxito al registrarse
 }
 if (isset($_GET['login'])) {
-	echo '<p class="error">Usuario o clave incorrecto</p>';
+	echo '<p class="error">Usuario o clave incorrecto</p>'; // Mensaje de error al iniciar sesión
 }
 if (isset($_GET['error'])) {
 	if ($_GET['error'] == 'duplicate_email') {
-		echo '<p class="error">Ya existe un usuario registrado con este correo electrónico.</p>';
+		echo '<p class="error">Ya existe un usuario registrado con este correo electrónico.</p>'; // Mensaje de error al intentar registrarse con un correo ya existente
 	} else {
-		echo '<p class="error">Debes llenar todos los casilleros correctamente.</p>';
+		echo '<p class="error">Debes llenar todos los casilleros correctamente.</p>'; // Mensaje de error al no completar todos los campos del formulario
 	}
 }
-
-// función JS para que los carteles desaparezcan a los 3 segundos
-echo "<script>
-  setTimeout(function() {
-    var messages = document.querySelectorAll('.correct, .error');
-    messages.forEach(function(message) {
-      message.classList.add('hidden');
-    });
-  }, 3000);
-</script>";
 
 ?>
 

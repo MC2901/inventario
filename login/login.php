@@ -31,5 +31,4 @@ if( $fetchAssocDB == NULL ){
 	  
 	
 }
-
 ?>
